@@ -1,0 +1,136 @@
+.category {
+	margin-top: 1vh;
+	font-family: 'Lato';
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start
+}
+
+.category_title {
+	display:inline-block;
+	font-size: 4vh;
+	margin-left: 4vh;
+    padding: 1vh;
+    text-align: center;
+    color: #005b87;
+    background-color: #f3f3f3;
+    border-style: solid;
+	border-width: 0.8vh;
+	border-color: #555;
+}
+
+.forum {
+	display: flex;
+	font-size: 2.5vh;
+	flex-direction: row;
+	color: white;
+    border-width: 0.8vh;
+    border-style: solid;
+    border-color: #555;
+    margin-top: 1vh;
+    align-self: center;
+    width: calc( 100vw - 30vh );
+    align-items: center;
+    background-color: #496F83;
+    padding: 2vh;
+}
+
+.forum_link {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	align-items: center;
+	text-decoration: none;
+	color: white;
+}
+
+.forum_icon {
+	height: 10vh;
+	margin-right: 2vh;
+}
+
+.forum_details {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-right: auto;
+}
+
+.forum_name {
+	font-weight: 900;
+}
+.forum_post_count {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.forum_post_count_number {
+	font-weight: 900;
+}
+
+.last_post_info {
+	text-align: right;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: flex-end;
+	margin-left: auto;
+}
+
+.thread_name {
+	text-decoration: none;
+	font-weight: 900;
+	color: white;
+}
+
+.link {
+	text-decoration: none;
+	color: lightgrey;
+	font-style: italic;
+}
+
+.subforum {
+	font-size: 2.4vh;
+    display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-left: 10vh;
+}
+
+.subforum_icon {
+	height: 10vh;
+	margin-right: 1vh;
+}
+
+.subforum_link {
+	text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	border-width: 0.8vh;
+    border-style: solid;
+    border-color: #555;
+    margin-top: 1vh;
+    background-color: #496F83;
+    padding: 2vh;
+}
+
+@media (max-width: 550px) {
+	.forum_post_count {
+		visibility: hidden;
+		position: absolute;
+	}
+}
+
+@media (max-width: 500px) {
+	.last_post_info {
+		visibility: hidden;
+		position: absolute;
+	}
+}
