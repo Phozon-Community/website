@@ -1,0 +1,11 @@
+body {
+	padding: 0;
+	margin: 0;
+	background-color: #6291AA;
+
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}

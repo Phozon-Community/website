@@ -1,0 +1,22 @@
+{% load static %}
+<html>
+	<head>
+		<title>Phozon - Forums</title>
+		<link rel="stylesheet" type="text/css" href="{% static "css/main.css" %}">
+		<link rel="stylesheet" type="text/css" href="{% static "css/header.css" %}">
+		<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+	</head>
+	<body>
+		<div class="header">
+			<span class="title">PHOZON</span>
+			<div class="user_box">
+				<img class="sign_in" src="http://steamhunt.com/templates/images/sign_steam.png"/>
+			</div>
+		</div>
+		<div class="content">
+			{% include pageTemplate with data=data %}
+		</div>
+	</body>
+</html>

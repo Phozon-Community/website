@@ -1,0 +1,48 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static "css/forum_list.css" %}">
+
+<div class="category">
+	{% for category_key, category_data in data.categories.items %}
+		<span class="category_title">{{ category_data.name }}</span>
+		{% for forum_key, forum_data in category_data.forums.items %}
+			<div class="forum">
+				<a href="/forums/{{ category_data.html_safe_name }}/{{ forum_data.html_safe_name }}/" class="forum_link">
+					<img src="http://flaticons.net/gd/makefg.php?i=icons/Mobile%20Application/Chat.png&r=255&g=255&b=255" class="forum_icon">
+					<div class="forum_details">
+						<span class="forum_name">{{ forum_data.name }}</span>
+						<span class="forum_description">{{ forum_data.description }}</span>
+					</div>
+				</a>
+				<div class="forum_post_count">
+					<span class="forum_post_count_number">{{ forum_data.post_count }}</span>
+					<span class="forum_post_count_text">
+						{% if forum_data.post_count == "1" %}
+							Post
+						{% else %}
+							Posts
+						{% endif %}
+					</span>
+				</div>
+				<div class="last_post_info">
+					<a href="/thread/{{ forum_data.last_reply.thread_id }}" class="thread_name">{{ forum_data.last_reply.thread_name }}</a>
+					<span class="poster">By <a href="/user/{{ forum_data.last_reply.author_id }}" class="link forum_user">{{ forum_data.last_reply.author_name }}</a></span>
+					<span class="date">{{ forum_data.last_reply.post_date }}</span>
+				</div>
+			</div>
+			{% for subforum_key, subforum_data in forum_data.sub_forums.items %}
+				<div class="subforum">
+					{% if subforum_key == forum_data.sub_forums|length|add:"-1" %}
+						<img src="{% static "content/subforum_marker/last.svg" %}" class="subforum_icon">
+					{% else %}
+						<img src="{% static "content/subforum_marker/notlast.svg" %}" class="subforum_icon">
+					{% endif %}
+					<a href="/forums/{{ category_data.html_safe_name }}/{{ forum_data.html_safe_name }}/{{ subforum_data.html_safe_name }}/" class="subforum_link" >
+						<span class="forum_name">{{ subforum_data.name }}</span>
+						<span class="forum_description">{{ subforum_data.description }}</span>
+					</a>
+				</div>
+			{% endfor %}
+		{% endfor %}
+		<br>
+	{% endfor %}
+</div>
